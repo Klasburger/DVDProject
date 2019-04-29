@@ -20,11 +20,11 @@ public class DVDList {
 		while(inFile.hasNextLine()) {
 			
 			DVDType tmpDVD= new DVDType();
-			tmpDVD.setMovie(inFile.nextLine());
-			tmpDVD.setStars(inFile.nextLine());
-			tmpDVD.setProducer(inFile.nextLine());
-			tmpDVD.setDirector(inFile.nextLine());
-			tmpDVD.setCompany(inFile.nextLine());
+			tmpDVD.setMovieName(inFile.nextLine());
+			tmpDVD.setStarName(inFile.nextLine());
+			tmpDVD.setProducerName(inFile.nextLine());
+			tmpDVD.setDirectorName(inFile.nextLine());
+			tmpDVD.setProductionCompany(inFile.nextLine());
 			tmpDVD.setCopies(inFile.nextInt());
 			movieList.add(tmpDVD);
 			
@@ -38,7 +38,7 @@ public class DVDList {
 		
 		for(int i=0;i<movieList.size();++i) {
 			
-			movieList.get
+			System.out.println(movieList.get(i).getMovieName());
 			
 		}
 		
