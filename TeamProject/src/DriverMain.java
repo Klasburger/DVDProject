@@ -1,10 +1,13 @@
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class DriverMain {
 
 
 	public static void main(String[] args) throws FileNotFoundException {
 		//test toString()
+		Scanner console =new Scanner(System.in);
+		int val;
 		DVDType test = new DVDType("The Fast and the Furious", "Paul Walker", "Neal H. Moritz", "Rob Cohen", "Universal Pictures", 5);
 		System.out.println(test);
 		System.out.println("Select one of the following: \n");
@@ -15,7 +18,7 @@ public class DriverMain {
 		System.out.println("5: To print only the titles of all the DVDS. \n");
 		System.out.println("6: To print a list of all DVDS. \n");
 		System.out.println("Enter choice: \n");
-
+		val=console.nextInt();
 
 }
 }
