@@ -29,7 +29,9 @@ public class DVDType {
 		this.movieName = movieName;
 	}
 	
-	
+	public String getMovieName() {
+		return movieName;
+	}
 
 	public void setStarName(String starName) {
 		this.starName = starName;
