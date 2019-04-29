@@ -26,6 +26,8 @@ public class DVDList {
 			tmpDVD.setDirectorName(inFile.nextLine());
 			tmpDVD.setProductionCompany(inFile.nextLine());
 			tmpDVD.setCopies(inFile.nextInt());
+			if(inFile.hasNextLine())
+				inFile.nextLine();
 			movieList.add(tmpDVD);
 			
 		}

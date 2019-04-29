@@ -18,7 +18,10 @@ public class DriverMain {
 		System.out.println("5: To print only the titles of all the DVDS. \n");
 		System.out.println("6: To print a list of all DVDS. \n");
 		System.out.println("Enter choice: \n");
-		val=console.nextInt();
-
+		
+		
+		DVDList movieList= new DVDList();
+		movieList.readFile();
+		movieList.printDVDNames();
 }
 }
