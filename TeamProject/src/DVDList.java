@@ -46,7 +46,11 @@ public class DVDList {
 		
 	}
 	
-	
+	public void printDVDs() {
+		for(int i = 0; i < movieList.size(); ++i) {
+			System.out.println(movieList.get(i));
+		}
+	}
 	
 	
 	
