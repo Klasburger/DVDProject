@@ -23,5 +23,7 @@ public class DriverMain {
 		DVDList movieList= new DVDList();
 		movieList.readFile();
 		movieList.printDVDNames();
-}
+		movieList.printDVDs();
+		movieList.check("Avengers");
+}		
 }
