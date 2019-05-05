@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class DVDList {
 
-	private ArrayList<DVDType> movieList = new ArrayList<DVDType>();
+	public ArrayList<DVDType> movieList = new ArrayList<DVDType>();
 
 	DVDList() {
 
@@ -32,16 +32,70 @@ public class DVDList {
 		}
 
 	}
+	
+	//method to remove a dvd from the list
+	
+	public void removeDVDFromList(int index) {
+		
+		movieList.remove(index);
+		
+	}
+	
+	//overloaded method to remove
+	
+	public void removeDVDFromList(String dvdName) {
+		
+		for(int i=0;i<movieList.size();++i) {
+			
+			if(movieList.get(i).getMovieName().equals(dvdName)) {
+				
+				movieList.remove(i);
+				
+			}
+			
+		}
+		
+	}
+
+	// method to add a dvd to the list
+	public void addDVDToList(DVDType dvd) {
+		
+		
+		movieList.add(dvd);
+
+	}
+
+	// method to return the index of a certain dvd
+
+	public int returnDVDIndex(String name) {
+
+		for (int i = 0; i < movieList.size(); ++i) {
+
+			if (movieList.get(i).getMovieName().equals(name)) {
+
+				return i;
+
+			}
+
+		}
+		return -1;
+	}
 
 	// method to print the list of DVD names only
 	public void printDVDNames() {
-
+		if(movieList.size()!=0) {
 		for (int i = 0; i < movieList.size(); ++i) {
 			System.out.print("Movie #" + (i + 1) + ": ");
 			System.out.println(movieList.get(i).getMovieName());
 
 		}
-
+		}
+		
+		else {
+			
+			System.out.println("There are no movies in the list to display.");
+			
+		}
 	}
 
 	// method to print out all information
@@ -78,6 +132,24 @@ public class DVDList {
 
 		}
 
+	}
+	
+	//boolean check when passing a string
+	
+	public boolean boolCheck(String tmp) {
+		
+		for(int i=0;i<movieList.size();++i) {
+			
+			if(movieList.get(i).getMovieName().equals(tmp)){
+				
+				return true;
+				
+			}
+			
+		}
+		
+		return false;
+		
 	}
 
 	// ask for name of movie, output number of copies
@@ -146,44 +218,43 @@ public class DVDList {
 		}
 
 	}
-	
+
 	public void inStock(String input) {
-		int index=-1;
+		int index = -1;
 		for (int i = 0; i < movieList.size(); ++i) {
-			
+
 			String tmp = movieList.get(i).getMovieName();
 			if (tmp.equals(input)) {
 
-				index=i;
-				i=movieList.size()+1;
-				
+				index = i;
+				i = movieList.size() + 1;
 
 			}
-		
+
 		}
 
-		if(index==-1) {
-			
+		if (index == -1) {
+
 			System.out.println("We do not carry the movie you entered");
-			
+
 		}
-		
+
 		else {
-			
-			if(movieList.get(index).getCopies()>0) {
-				
+
+			if (movieList.get(index).getCopies() > 0) {
+
 				System.out.println("In Stock");
-				
+
 			}
-			
+
 			else {
-				
+
 				System.out.println("Not in stock");
-				
+
 			}
-			
+
 		}
-		
+
 	}
 
 }
